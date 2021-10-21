@@ -5,10 +5,6 @@
  */
 package entidades;
 
-/**
- *
- * @author felix
- */
 public class estadoFinanciero {
     private int id_tipo_estado_financiero;
     private String fecha_inicio;

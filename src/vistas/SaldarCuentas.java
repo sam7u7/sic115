@@ -12,10 +12,6 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import modelos.ModeloNoEditable;
 
-/**
- *
- * @author felix
- */
 public class SaldarCuentas extends javax.swing.JDialog {
     
     //variables

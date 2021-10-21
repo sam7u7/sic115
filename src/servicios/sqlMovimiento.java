@@ -13,17 +13,13 @@ import java.sql.Date;
 import java.util.List;
 import modelos.ModeloNoEditable;
 
-/**
- *
- * @author felix
- */
+
 public class sqlMovimiento extends Conexion {
        public void cuenta(JComboBox cbo, int columna){
         //Variables para la preparacion de conexion con la BD
         PreparedStatement ps = null;
         ResultSet rs= null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "SELECT id_cuenta, nombre_cuenta FROM cuenta";
         //Validacion por errores de conexion
         try{
@@ -45,7 +41,6 @@ public class sqlMovimiento extends Conexion {
        //Variables para la preparacion de conexion con la BD
         PreparedStatement ps = null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "INSERT INTO movimiento (id_cuenta, fecha, tipo, descripcion, cantidad_debe, cantidad_haber) VALUES (?,?,?,?,?,?)";
         //Validacion por errores de conexion
         try{
@@ -75,7 +70,6 @@ public class sqlMovimiento extends Conexion {
         PreparedStatement ps = null;
         ResultSet rs= null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "SELECT id_cuenta FROM cuenta WHERE nombre_cuenta=?";
         //Validacion por errores de conexion
         try{

@@ -15,10 +15,7 @@ import javax.swing.DefaultListModel;
 import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JList;
-/**
- *
- * @author felix
- */
+
 public class sqlCuenta extends Conexion {
     public void tipoCuenta(JComboBox cbo, int columna){
     //Variables para la preparacion de conexion con la BD
@@ -32,7 +29,6 @@ public class sqlCuenta extends Conexion {
             //Utilizacion de variables, para obtener datos de la BD
             ps= con.prepareStatement(sql);
             rs= ps.executeQuery();
-            //Recorrer la BD
             while(rs.next()){
                 cbo.addItem(rs.getString(columna));
             }
@@ -47,7 +43,6 @@ public class sqlCuenta extends Conexion {
        //Variables para la preparacion de conexion con la BD
         PreparedStatement ps = null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "INSERT INTO cuenta (id_cuenta, id_tipo_cuenta, nombre_cuenta) VALUES (?,?,?)";
         //Validacion por errores de conexion
         try{
@@ -68,7 +63,6 @@ public class sqlCuenta extends Conexion {
        //Variables para la preparacion de conexion con la BD
         PreparedStatement ps = null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "UPDATE cuenta SET id_cuenta=? ,id_tipo_cuenta=? ,nombre_cuenta=? WHERE id_cuenta=?";
         //Validacion por errores de conexion
         try{
@@ -100,7 +94,6 @@ public class sqlCuenta extends Conexion {
         PreparedStatement ps = null;
         ResultSet rs= null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "SELECT c.id_cuenta, t.nombre_tipo_cuenta, c.nombre_cuenta FROM cuenta c inner join tipocuenta t on c.id_tipo_cuenta=t.id_tipo_cuenta";
         //Validacion por errores de conexion
         try{

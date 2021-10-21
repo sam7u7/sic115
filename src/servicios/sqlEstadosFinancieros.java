@@ -18,17 +18,13 @@ import entidades.movimiento;
 import java.sql.Date;
 import java.time.LocalDate;
 
-/**
- *
- * @author felix
- */
+
 public class sqlEstadosFinancieros extends Conexion{
     public void nombreEstado(JComboBox cbo, int columna){
         //Variables para la preparacion de conexion con la BD
         PreparedStatement ps = null;
         ResultSet rs= null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "SELECT nombre_estado_financiero FROM tipoestadofinanciero";
         //Validacion por errores de conexion
         try{
@@ -50,7 +46,6 @@ public class sqlEstadosFinancieros extends Conexion{
         //Variables para la preparacion de conexion con la BD
         PreparedStatement ps = null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "INSERT INTO estadofinanciero (fecha_inicio, fecha_fin, saldo_estado_financiero, id_tipo_estado_financiero) VALUES (?,?,?,?)";
         //Validacion por errores de conexion
         try{
@@ -74,7 +69,6 @@ public class sqlEstadosFinancieros extends Conexion{
         PreparedStatement ps = null;
         ResultSet rs= null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "SELECT SUM(saldo_cuenta_saldada_debe) FROM cuentasaldada WHERE fecha_inicio = ? AND fecha_fin = ? ";
         //Validacion por errores de conexion
         try{

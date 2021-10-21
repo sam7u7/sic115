@@ -18,10 +18,7 @@ import modelos.ModeloNoEditable;
 import org.postgresql.util.PSQLException;
 
 
-/**
- *
- * @author Eduardo Orellana
- */
+
 public class sqlGestionPeriodo extends Conexion{
     
     List<periodo> perList = new ArrayList<periodo>();
@@ -120,7 +117,6 @@ public class sqlGestionPeriodo extends Conexion{
         ResultSet rs= null;
         
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "SELECT * from periodo order by fecha_inicio";
         //Validacion por errores de conexion
         try{

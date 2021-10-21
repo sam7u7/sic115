@@ -16,10 +16,6 @@ import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;*/
 import servicios.sqlPeriodo;
 
-/**
- *
- * @author felix
- */
 public class EstadosFinancieros extends javax.swing.JDialog {
     sqlEstadosFinancieros financiero = new sqlEstadosFinancieros();
     sqlPeriodo periodo = new sqlPeriodo();

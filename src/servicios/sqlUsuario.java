@@ -8,10 +8,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import entidades.usuario;
 
-/**
- *
- * @author felix
- */
+
 public class sqlUsuario extends Conexion {
     //Metodo para varificacion de existencia de usuario
     public boolean login(usuario usr){
@@ -19,7 +16,6 @@ public class sqlUsuario extends Conexion {
         PreparedStatement ps = null;
         ResultSet rs= null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "SELECT codigo_empleado, usuario, clave FROM usuario WHERE usuario = ?";
         //Validacion por errores de conexion
         try{

@@ -1,9 +1,5 @@
 package entidades;
 
-/**
- *
- * @author felix
- */
 public class tipoCuenta {
     //Variables de la entidad tipo cuenta
     private int id_tipo_cuenta;

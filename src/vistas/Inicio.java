@@ -3,10 +3,7 @@ package vistas;
 import javax.swing.JOptionPane;
 
 
-/**
- *
- * @author felix
- */
+
 public class Inicio extends javax.swing.JFrame {
 
     GestionCuenta frmGC;

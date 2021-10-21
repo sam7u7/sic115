@@ -1,9 +1,6 @@
 package entidades;
 
-/**
- *
- * @author felix
- */
+
 public class movimiento {
     //Variables de la entidad movimiento
     private int id_movimiento;

@@ -20,10 +20,7 @@ import static javax.swing.JOptionPane.YES_NO_OPTION;
 import modelos.ModeloNoEditable;
 import vistas.RegistrarTransaccion;
 
-/**
- *
- * @author felix
- */
+
 public class sqlSaldarCuentas extends Conexion{
     //Listas de objetos a utilizar
     List<movimiento> movimientos = new ArrayList<movimiento>();
@@ -57,7 +54,6 @@ public class sqlSaldarCuentas extends Conexion{
         PreparedStatement ps = null;
         ResultSet rs= null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "SELECT * FROM movimiento WHERE fecha BETWEEN ? AND ?";
         String sql2 = "SELECT id_cuenta FROM cuenta";
         //Validacion por errores de conexion
@@ -204,7 +200,6 @@ public class sqlSaldarCuentas extends Conexion{
         PreparedStatement ps = null;
         ResultSet rs= null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "select cu.nombre_cuenta, cs.saldo_cuenta_saldada_debe, cs.saldo_cuenta_saldada_haber,\n" +
         "cs.fecha_inicio, cs.fecha_fin from cuenta cu inner join cuentasaldada cs on cu.id_cuenta = cs.id_cuenta where cs.fecha_inicio=? and cs.fecha_fin=?";
         //Validacion por errores de conexion
@@ -235,7 +230,6 @@ public class sqlSaldarCuentas extends Conexion{
         PreparedStatement ps = null;
         ResultSet rs= null;
         Connection con = getConexion();
-        //Sentencia sql 
         String sql = "select cu.nombre_cuenta, tp.nombre_tipo_cuenta, mov.tipo, mov.descripcion, mov.fecha, mov.cantidad_debe, \n" +
                      "mov.cantidad_haber from movimiento mov inner join cuenta cu on mov.id_cuenta = cu.id_cuenta\n" +
                      "inner join tipocuenta tp on cu.id_tipo_cuenta = tp.id_tipo_cuenta where fecha between ? and ?";

@@ -19,10 +19,6 @@ import modelos.ModeloNoEditable;
 import servicios.sqlGestionPeriodo;
 
 
-/**
- *
- * @author Eduardo Orellana
- */
 public class CrearPeriodo extends javax.swing.JDialog {
 
     

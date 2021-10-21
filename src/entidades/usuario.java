@@ -1,9 +1,5 @@
 package entidades;
 
-/**
- *
- * @author felix
- */
 public class usuario {
     //Variables de la entidad usuario
     private int codigo_empleado;

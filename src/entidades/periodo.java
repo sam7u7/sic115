@@ -2,10 +2,7 @@ package entidades;
 
 import java.sql.Date;
 
-/**
- *
- * @author felix
- */
+
 public class periodo {
     //Variables de la entidad periodo
    

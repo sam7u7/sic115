@@ -8,10 +8,6 @@ package vistas;
 import javax.swing.JComboBox;
 import modelos.ModeloNoEditable;
 
-/**
- *
- * @author Eduardo Orellana
- */
 public class CosteoOrdenFabricacion extends javax.swing.JDialog {
 
     /**

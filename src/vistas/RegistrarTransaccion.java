@@ -6,10 +6,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import modelos.ModeloNoEditable;
 import servicios.sqlMovimiento;
-/**
- *
- * @author felix
- */
+
 public class RegistrarTransaccion extends javax.swing.JDialog {
     //Variables a utilizar
     sqlMovimiento movimiento = new sqlMovimiento();

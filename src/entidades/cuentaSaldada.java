@@ -1,9 +1,6 @@
 package entidades;
 
-/**
- *
- * @author felix
- */
+
 public class cuentaSaldada {
     //Variables de la entidad cuenta saldada
     private int id_cuenta_saldada;

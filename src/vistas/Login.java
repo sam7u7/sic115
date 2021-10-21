@@ -3,10 +3,6 @@ package vistas;
 import entidades.usuario;
 import javax.swing.JOptionPane;
 import servicios.sqlUsuario;
-/**
- *
- * @author felix
- */
 public class Login extends javax.swing.JFrame {
     public Login() {
         initComponents();

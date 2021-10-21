@@ -5,10 +5,6 @@ import entidades.*;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import modelos.*;
-/**
- *
- * @author felix
- */
 public class GestionCuenta extends javax.swing.JDialog {
     //Variables a utilizar
     sqlCuenta tipoCuenta = new sqlCuenta();
