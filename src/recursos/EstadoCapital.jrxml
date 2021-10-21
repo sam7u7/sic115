@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fbc92c75-d2a4-4caa-91ac-13ca7adf88e7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     cuentasaldada."id_cuenta" AS cuentasaldada_id_cuenta,
+     cuentasaldada."saldo_cuenta_saldada_debe" AS cuentasaldada_saldo_cuenta_saldada_debe,
+     cuentasaldada."saldo_cuenta_saldada_haber" AS cuentasaldada_saldo_cuenta_saldada_haber,
+     cuentasaldada."fecha_inicio" AS cuentasaldada_fecha_inicio,
+     cuentasaldada."fecha_fin" AS cuentasaldada_fecha_fin,
+     cuenta."nombre_cuenta" AS cuenta_nombre_cuenta,
+     tipocuenta."nombre_tipo_cuenta" AS tipocuenta_nombre_tipo_cuenta
+FROM
+     "public"."cuenta" cuenta INNER JOIN "public"."cuentasaldada" cuentasaldada ON cuenta."id_cuenta" = cuentasaldada."id_cuenta"
+     INNER JOIN "public"."tipocuenta" tipocuenta ON cuenta."id_tipo_cuenta" = tipocuenta."id_tipo_cuenta"]]>
+	</queryString>
+	<field name="cuentasaldada_id_cuenta" class="java.lang.Integer"/>
+	<field name="cuentasaldada_saldo_cuenta_saldada_debe" class="java.math.BigDecimal"/>
+	<field name="cuentasaldada_saldo_cuenta_saldada_haber" class="java.math.BigDecimal"/>
+	<field name="cuentasaldada_fecha_inicio" class="java.sql.Date"/>
+	<field name="cuentasaldada_fecha_fin" class="java.sql.Date"/>
+	<field name="cuenta_nombre_cuenta" class="java.lang.String"/>
+	<field name="tipocuenta_nombre_tipo_cuenta" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="72" splitType="Stretch">
+			<staticText>
+				<reportElement x="243" y="0" width="100" height="20" uuid="b6e8571d-6174-4e1f-857c-9f24a4ae6958"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="271" y="49" width="28" height="20" uuid="85edf587-e73d-425d-bf95-6fd5e646124e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="49" width="28" height="20" uuid="84874ef5-27b1-4210-bcd9-a53ee5a63a27"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEL]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="12" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="42" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="23" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="71" y="0" width="100" height="20" uuid="44d9da8f-a649-4bf5-901c-66cfb0385e93"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Generado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="0" width="90" height="20" uuid="628fbbc7-9f26-427b-925d-2f895e55499f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[[PAGE NUMBER]]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

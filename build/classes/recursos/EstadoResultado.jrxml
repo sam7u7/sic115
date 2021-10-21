@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="acc68816-2400-41e6-aa2c-541d721d550c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     cuentasaldada."saldo_cuenta_saldada_debe" AS cuentasaldada_saldo_cuenta_saldada_debe,
+     cuentasaldada."saldo_cuenta_saldada_haber" AS cuentasaldada_saldo_cuenta_saldada_haber,
+     cuenta."nombre_cuenta" AS cuenta_nombre_cuenta,
+     cuentasaldada."id_cuenta" AS cuentasaldada_id_cuenta,
+     cuentasaldada."fecha_inicio" AS cuentasaldada_fecha_inicio,
+     cuentasaldada."fecha_fin" AS cuentasaldada_fecha_fin,
+     tipocuenta."nombre_tipo_cuenta" AS tipocuenta_nombre_tipo_cuenta
+FROM
+     "public"."cuenta" cuenta INNER JOIN "public"."cuentasaldada" cuentasaldada ON cuenta."id_cuenta" = cuentasaldada."id_cuenta"
+     INNER JOIN "public"."tipocuenta" tipocuenta ON cuenta."id_tipo_cuenta" = tipocuenta."id_tipo_cuenta"
+WHERE cuentasaldada.fecha_inicio = '2020-11-01' AND (tipocuenta.nombre_tipo_cuenta = 'Gastos' OR tipocuenta.nombre_tipo_cuenta = 'Ingresos')]]>
+	</queryString>
+	<field name="cuentasaldada_saldo_cuenta_saldada_debe" class="java.math.BigDecimal"/>
+	<field name="cuentasaldada_saldo_cuenta_saldada_haber" class="java.math.BigDecimal"/>
+	<field name="cuenta_nombre_cuenta" class="java.lang.String"/>
+	<field name="cuentasaldada_id_cuenta" class="java.lang.Integer"/>
+	<field name="cuentasaldada_fecha_inicio" class="java.sql.Date"/>
+	<field name="cuentasaldada_fecha_fin" class="java.sql.Date"/>
+	<field name="tipocuenta_nombre_tipo_cuenta" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="293" y="49" width="28" height="20" uuid="807ad1af-7018-492e-b264-4ce19e350574"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="49" width="28" height="20" uuid="d1fd565b-7b3b-482a-b087-00bc6096a710"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="265" y="0" width="100" height="20" uuid="92f14a0a-d3de-448f-801c-7c4bad7ac8e0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empresa]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="250" y="49" width="43" height="20" uuid="10a7be05-92ad-44a1-a2f3-75dce288f035"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cuentasaldada_fecha_inicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="321" y="49" width="44" height="20" uuid="ac2a6b7b-ff50-428a-b1d5-150f13c4be47"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cuentasaldada_fecha_fin}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="16" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="35" y="0" width="100" height="20" uuid="cff824e0-dc93-47c4-9ed0-1675b7793928"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cuenta]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="70" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="18" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="35" y="0" width="100" height="20" uuid="35f3e0d9-359c-44e4-a515-70d9e165a06e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Generado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="0" width="90" height="20" uuid="a0e61445-f309-4685-901c-6bc079d550d7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[[PAGE NUMBER]]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="135" y="0" width="148" height="20" uuid="ebe05395-d481-484d-baf8-d8fdf23a9a41"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="433" y="0" width="80" height="20" uuid="b5006d64-e260-43f7-9bf5-33c2fa0bd251"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="513" y="0" width="40" height="20" uuid="af329807-32e9-4818-adc0-a59ab62132f1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

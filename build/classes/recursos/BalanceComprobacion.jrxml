@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1e3ede3d-f9d4-4e8c-8575-4c3255c4afd9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nombreEstado" class="java.lang.String"/>
+	<parameter name="fechaPeriodo" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+     cuenta."nombre_cuenta" AS cuenta_nombre_cuenta,
+     cuentasaldada."id_cuenta" AS cuentasaldada_id_cuenta,
+     cuentasaldada."saldo_cuenta_saldada_debe" AS cuentasaldada_saldo_cuenta_saldada_debe,
+     cuentasaldada."saldo_cuenta_saldada_haber" AS cuentasaldada_saldo_cuenta_saldada_haber,
+     TO_CHAR(cuentasaldada."fecha_inicio",'dd-Mon-YYYY') AS cuentasaldada_fecha_inicio,
+     TO_CHAR(cuentasaldada."fecha_fin",'dd-Mon-YYYY') AS cuentasaldada_fecha_fin,
+     tipocuenta."id_tipo_cuenta" AS tipocuenta_id_tipo_cuenta
+FROM
+     "public"."cuenta" cuenta INNER JOIN "public"."cuentasaldada" cuentasaldada ON cuenta."id_cuenta" = cuentasaldada."id_cuenta"
+     INNER JOIN "public"."tipocuenta" tipocuenta ON cuenta."id_tipo_cuenta" = tipocuenta."id_tipo_cuenta"
+WHERE cuentasaldada.fecha_inicio = $P!{fechaPeriodo} AND (cuentasaldada.saldo_cuenta_saldada_debe > 0 OR cuentasaldada.saldo_cuenta_saldada_haber > 0)]]>
+	</queryString>
+	<field name="cuenta_nombre_cuenta" class="java.lang.String"/>
+	<field name="cuentasaldada_id_cuenta" class="java.lang.Integer"/>
+	<field name="cuentasaldada_saldo_cuenta_saldada_debe" class="java.math.BigDecimal"/>
+	<field name="cuentasaldada_saldo_cuenta_saldada_haber" class="java.math.BigDecimal"/>
+	<field name="cuentasaldada_fecha_inicio" class="java.lang.String"/>
+	<field name="cuentasaldada_fecha_fin" class="java.lang.String"/>
+	<field name="tipocuenta_id_tipo_cuenta" class="java.lang.Integer"/>
+	<variable name="cuentasaldada_saldo_cuenta_saldada_debe_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{cuentasaldada_saldo_cuenta_saldada_debe}]]></variableExpression>
+	</variable>
+	<variable name="cuentasaldada_saldo_cuenta_saldada_haber_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{cuentasaldada_saldo_cuenta_saldada_haber}]]></variableExpression>
+	</variable>
+	<group name="tipocuenta_id_tipo_cuenta">
+		<groupExpression><![CDATA[$F{tipocuenta_id_tipo_cuenta}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="81" splitType="Stretch">
+			<staticText>
+				<reportElement x="246" y="15" width="100" height="20" uuid="8c1d5513-f5a5-4ab3-aaf2-69bfd6409cc5"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Empresa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="61" width="35" height="20" uuid="3ba462e2-ad4b-4de0-9c26-9f06c5edc7a8"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="175" y="61" width="65" height="20" uuid="6de709f3-c67a-4eba-9eea-463eecbffeeb"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cuentasaldada_fecha_inicio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="277" y="61" width="32" height="20" uuid="0428b48f-c13a-4bf2-aaff-0e5e83832ea7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[AL]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="309" y="61" width="70" height="20" uuid="4d914ddf-296c-422e-b6bd-a09be8e8d688"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{cuentasaldada_fecha_fin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="214" y="35" width="216" height="20" uuid="a0e10a51-216c-45e7-82b6-6cb75c2d438f"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{nombreEstado}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="15" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="40" y="2" width="100" height="20" uuid="fd157e90-0253-4c4a-8654-807e6a9a5a96"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="2" width="100" height="20" uuid="3ec7c891-fd00-4fcb-83b2-a027a6160dd6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cuenta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="346" y="2" width="100" height="20" uuid="18c4592e-5e05-4c12-9f6e-fdb61459efec"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEBE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="449" y="2" width="100" height="20" uuid="85f7d862-a06a-426c-89c8-4b7bfb6a8cd1"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[HABER]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="40" y="0" width="100" height="20" uuid="6a264c0e-d35e-4ca6-815f-26a8096944c1"/>
+				<textFieldExpression><![CDATA[$F{cuentasaldada_id_cuenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="0" width="100" height="20" uuid="80ff875c-83e5-422a-83f6-9e018c0264da"/>
+				<textFieldExpression><![CDATA[$F{cuenta_nombre_cuenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="346" y="0" width="100" height="20" uuid="a24421c8-a073-455d-80f4-63f7a39fff94"/>
+				<textFieldExpression><![CDATA[$F{cuentasaldada_saldo_cuenta_saldada_debe}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="449" y="0" width="100" height="20" uuid="e81bb146-2029-46fc-ae87-7870704b099a"/>
+				<textFieldExpression><![CDATA[$F{cuentasaldada_saldo_cuenta_saldada_haber}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="18" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="0de57d92-1731-41e3-a3b4-f6b3bf9915de"/>
+				<text><![CDATA[Generado]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="102" y="0" width="144" height="20" uuid="6322cfdb-bcab-4f08-bc25-4ec391e94c28"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="359" y="0" width="90" height="20" uuid="2deb0785-2637-42aa-9e09-f0da85cc7337"/>
+				<text><![CDATA[[PAGE NUMBER]]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="424" y="0" width="80" height="20" uuid="e56220ec-51d9-4925-8415-71d6eb01a622"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="504" y="0" width="40" height="20" uuid="98d8968d-cc2b-4adb-9034-ea12c12020cf"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="346" y="0" width="100" height="20" uuid="ffd8b56b-75b4-418e-b1e6-051f5dc4c3c3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{cuentasaldada_saldo_cuenta_saldada_debe_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="449" y="0" width="100" height="20" uuid="da7912c4-d7e8-4441-9b71-d8b43a91894b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{cuentasaldada_saldo_cuenta_saldada_haber_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="140" y="0" width="100" height="20" uuid="1cb547f6-3451-443b-8ca7-468e627c4466"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTALES]]></text>
+			</staticText>
+			<line>
+				<reportElement x="449" y="0" width="84" height="1" uuid="5e85a112-2acd-49f9-9065-172eee50cfa3"/>
+			</line>
+			<line>
+				<reportElement x="346" y="0" width="84" height="1" uuid="e00ed72f-0ff7-43d1-9aa3-77bf7037840f"/>
+			</line>
+			<line>
+				<reportElement x="140" y="0" width="100" height="1" uuid="2f6586af-07dc-478a-817e-ac44c390d5eb"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
