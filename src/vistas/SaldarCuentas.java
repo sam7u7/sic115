@@ -285,10 +285,10 @@ public class SaldarCuentas extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Saldar cuentas");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Book Antiqua", 1, 11))); // NOI18N
         jPanel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Book Antiqua", 1, 12)); // NOI18N
         jLabel1.setText("Inicio de periodo");
 
         dateChooserCombo2.setFormat(2);
@@ -314,10 +314,10 @@ public class SaldarCuentas extends javax.swing.JDialog {
         e1.printStackTrace();
     }
 
-    jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+    jLabel2.setFont(new java.awt.Font("Book Antiqua", 1, 12)); // NOI18N
     jLabel2.setText("Fin de periodo");
 
-    jButton1.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+    jButton1.setFont(new java.awt.Font("Book Antiqua", 1, 12)); // NOI18N
     jButton1.setText("Saldar cuentas");
     jButton1.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -331,7 +331,7 @@ public class SaldarCuentas extends javax.swing.JDialog {
         }
     });
 
-    jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
+    jLabel3.setFont(new java.awt.Font("Book Antiqua", 1, 12)); // NOI18N
     jLabel3.setText("Periodo:");
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -376,9 +376,10 @@ public class SaldarCuentas extends javax.swing.JDialog {
                 .addComponent(jButton1)))
     );
 
-    jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Cuentas saldadas"));
+    jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Cuentas saldadas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Book Antiqua", 1, 11))); // NOI18N
     jPanel2.setFont(new java.awt.Font("Times New Roman", 1, 12)); // NOI18N
 
+    jTable1.setBorder(new javax.swing.border.MatteBorder(null));
     jTable1.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
             {null, null, null, null},
@@ -397,18 +398,20 @@ public class SaldarCuentas extends javax.swing.JDialog {
     jPanel2.setLayout(jPanel2Layout);
     jPanel2Layout.setHorizontalGroup(
         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
+        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
     );
     jPanel2Layout.setVerticalGroup(
         jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        .addGroup(jPanel2Layout.createSequentialGroup()
             .addContainerGap()
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 303, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
-    jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Transacciones"));
+    jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.MatteBorder(null), "Transacciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Book Antiqua", 1, 11))); // NOI18N
     jPanel3.setName("Datos"); // NOI18N
 
+    jTable2.setBorder(new javax.swing.border.MatteBorder(null));
     jTable2.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
             {null, null, null, null},
@@ -434,7 +437,9 @@ public class SaldarCuentas extends javax.swing.JDialog {
     );
     jPanel3Layout.setVerticalGroup(
         jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-        .addComponent(jScrollPane2)
+        .addGroup(jPanel3Layout.createSequentialGroup()
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGap(0, 0, Short.MAX_VALUE))
     );
 
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -448,12 +453,12 @@ public class SaldarCuentas extends javax.swing.JDialog {
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGap(18, 18, 18)
             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addContainerGap(15, Short.MAX_VALUE))
+            .addContainerGap(19, Short.MAX_VALUE))
     );
     layout.setVerticalGroup(
         layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(layout.createSequentialGroup()
-            .addGap(30, 30, 30)
+            .addContainerGap()
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                 .addGroup(layout.createSequentialGroup()
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -462,7 +467,7 @@ public class SaldarCuentas extends javax.swing.JDialog {
                 .addGroup(layout.createSequentialGroup()
                     .addGap(12, 12, 12)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-            .addContainerGap(18, Short.MAX_VALUE))
+            .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
     );
 
     jPanel3.getAccessibleContext().setAccessibleDescription("Transacciones");

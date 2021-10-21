@@ -7,10 +7,7 @@ package sistemacontable;
 import java.sql.*;
 import java.lang.Exception;
 import java.io.*;
-/**
- *
- * @author felix
- */
+
 public class SistemaContable {
 
     /**
@@ -21,9 +18,9 @@ public class SistemaContable {
         
         //Conexion con la BD
         //Datos de la BD
-        String url = "jdbc:postgresql://localhost:5432/SIC";
+        String url = "jdbc:postgresql://localhost:5432/sic115";
         String usuario = "postgres";
-        String contrasenia = "170398";
+        String contrasenia = "2214";
         //Validacion
         try{
             //Tipo de lenguaje de BD
