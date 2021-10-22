@@ -18,7 +18,7 @@ public class SistemaContable {
         
         //Conexion con la BD
         //Datos de la BD
-        String url = "jdbc:postgresql://localhost:5432/sic115";
+        String url = "jdbc:postgresql://localhost:5432/sic";
         String usuario = "postgres";
         String contrasenia = "2214";
         //Validacion

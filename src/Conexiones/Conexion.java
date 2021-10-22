@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 public class Conexion {
     //Constantes de conexion
-    private final String base = "sic115"; //Nombre de la BD
+    private final String base = "sic"; //Nombre de la BD
     private final String user = "postgres"; //Usuario del servidor
     private final String password = "2214"; //Contraseña del servidor
     private final String url = "jdbc:postgresql://localhost:5432/"+base; //url del servidor
