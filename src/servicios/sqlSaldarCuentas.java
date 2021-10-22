@@ -1,5 +1,6 @@
 package servicios;
 import Conexiones.Conexion;
+import Conexiones.sql;
 import entidades.cuenta;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -107,7 +108,8 @@ public class sqlSaldarCuentas extends Conexion{
         Connection con = getConexion();
         PreparedStatement ps = null;
         ResultSet rs = null;
-        String sql = "INSERT INTO cuentasaldada (id_cuenta, saldo_cuenta_saldada_debe, saldo_cuenta_saldada_haber, fecha_inicio, fecha_fin) VALUES (?,?,?,?,?)";
+        sql s = new sql();
+        String sql = "INSERT INTO cuentasaldada (id_cuenta_saldada,id_cuenta, saldo_cuenta_saldada_debe, saldo_cuenta_saldada_haber, fecha_inicio, fecha_fin) VALUES (?,?,?,?,?,?)";
         String sql2 = "SELECT fecha_inicio, fecha_fin FROM cuentasaldada where fecha_inicio=? and fecha_fin=?";
         
         
@@ -150,29 +152,29 @@ public class sqlSaldarCuentas extends Conexion{
 
                                 if(debe > haber){
                                     resultado = debe-haber;
-
-                                    ps.setInt(1, aux1);
-                                    ps.setDouble(2, resultado);
-                                    ps.setDouble(3, 0);
-                                    ps.setDate(4, Date.valueOf(ini));
-                                    ps.setDate(5, Date.valueOf(fin));
+                                    ps.setInt(1,s.id_incrementableSaldarCuenta());
+                                    ps.setInt(2, aux1);
+                                    ps.setDouble(3, resultado);
+                                    ps.setDouble(4, 0);
+                                    ps.setDate(5, Date.valueOf(ini));
+                                    ps.setDate(6, Date.valueOf(fin));
 
                                 }else if(debe < haber){
                                     resultado = haber-debe;
-
-                                    ps.setInt(1, aux1);
-                                    ps.setDouble(2, 0);
-                                    ps.setDouble(3, resultado);
-                                    ps.setDate(4, Date.valueOf(ini));
-                                    ps.setDate(5, Date.valueOf(fin));
+                                    ps.setInt(1,s.id_incrementableSaldarCuenta());
+                                    ps.setInt(2, aux1);
+                                    ps.setDouble(3, 0);
+                                    ps.setDouble(4, resultado);
+                                    ps.setDate(5, Date.valueOf(ini));
+                                    ps.setDate(6, Date.valueOf(fin));
 
                                 }else if(debe == haber){
-
-                                    ps.setInt(1, aux1);
-                                    ps.setDouble(2, 0);
+                                    ps.setInt(1,s.id_incrementableSaldarCuenta());
+                                    ps.setInt(2, aux1);
                                     ps.setDouble(3, 0);
-                                    ps.setDate(4, Date.valueOf(ini));
-                                    ps.setDate(5, Date.valueOf(fin));
+                                    ps.setDouble(4, 0);
+                                    ps.setDate(5, Date.valueOf(ini));
+                                    ps.setDate(6, Date.valueOf(fin));
                                 }
                                res = ps.execute();               
                             }

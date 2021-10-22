@@ -1,6 +1,7 @@
 package servicios;
 
 import Conexiones.Conexion;
+import Conexiones.sql;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -40,19 +41,27 @@ public class sqlMovimiento extends Conexion {
         public boolean agregar(List<movimiento> mov){
        //Variables para la preparacion de conexion con la BD
         PreparedStatement ps = null;
+        sql s = new sql();
         Connection con = getConexion();
-        String sql = "INSERT INTO movimiento (id_cuenta, fecha, tipo, descripcion, cantidad_debe, cantidad_haber) VALUES (?,?,?,?,?,?)";
+        String sql = "INSERT INTO movimiento (id_movimiento ,id_cuenta, fecha, tipo, descripcion, cantidad_debe, cantidad_haber) VALUES (?,?,?,?,?,?,?)";
         //Validacion por errores de conexion
         try{
             //Utilizacion de variables, para obtener datos de la BD
             for(int i=0; i < mov.size();i++){
                 ps = con.prepareStatement(sql);
-                ps.setInt(1, mov.get(i).getId_cuenta());
-                ps.setDate(2, Date.valueOf(mov.get(i).getFecha()));
-                ps.setString(3, mov.get(i).getTipo());
-                ps.setString(4, mov.get(i).getDescripcion());
-                ps.setDouble(5, mov.get(i).getCantidad_movimiento_debe());
-                ps.setDouble(6, mov.get(i).getCantidad_movimiento_haber());
+                /*int a=0;
+                for(int j=0;j<mov.size();j++)
+                {
+                    a++;
+                }*/
+                
+                ps.setInt(1,s.id_incrementable());
+                ps.setInt(2, mov.get(i).getId_cuenta());
+                ps.setDate(3, Date.valueOf(mov.get(i).getFecha()));
+                ps.setString(4, mov.get(i).getTipo());
+                ps.setString(5, mov.get(i).getDescripcion());
+                ps.setDouble(6, mov.get(i).getCantidad_movimiento_debe());
+                ps.setDouble(7, mov.get(i).getCantidad_movimiento_haber());
                 ps.execute();
                 ps = null;
             }
