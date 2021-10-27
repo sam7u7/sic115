@@ -154,7 +154,7 @@ public class GestionCuenta extends javax.swing.JDialog {
                 .addGap(25, 25, 25))
         );
 
-        jList1.setEnabled(false);
+        jList1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane2.setViewportView(jList1);
 
         jLabel4.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N

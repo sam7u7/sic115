@@ -89,6 +89,7 @@ public class sqlGestionPeriodo extends Conexion{
            if(!validar2.isEmpty() || !validar1.isEmpty()){        
                JOptionPane.showMessageDialog(null, "Ya existe este periodo");
            }else{
+               
                ps = con.prepareStatement(sql);
                ps.setDate(1, ini);
                ps.setDate(2, fin);
@@ -98,7 +99,8 @@ public class sqlGestionPeriodo extends Conexion{
            }            
             
         }catch(SQLException ex){
-           Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex);
+           Logger.getLogger(Conexion.class.getName()).log(Level.SEVERE, null, ex.getMessage());
+           System.out.print("error"+ ex.getMessage());
         }
     }
     

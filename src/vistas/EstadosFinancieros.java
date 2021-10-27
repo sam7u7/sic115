@@ -3,17 +3,18 @@ package vistas;
 import servicios.sqlEstadosFinancieros;
 import Conexiones.Conexion;
 import entidades.estadoFinanciero;
+import java.io.File;
 import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
-/*import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
-import net.sf.jasperreports.view.JasperViewer;*/
+import net.sf.jasperreports.view.JasperViewer;
 import servicios.sqlPeriodo;
 
 public class EstadosFinancieros extends javax.swing.JDialog {
@@ -40,7 +41,7 @@ public class EstadosFinancieros extends javax.swing.JDialog {
         financiero.nombreEstado(jComboBox3, 1);
     }
     
-    /*public void generarReporte(String param1,String param2, String path,String tit){
+    public void generarReporte(String param1,String param2, String path,String tit){
         //Conexion
         Conexion con  = new Conexion();
         Connection conn = con.getConexion();
@@ -56,14 +57,14 @@ public class EstadosFinancieros extends javax.swing.JDialog {
             JasperPrint jprint; //Variable de impresion
             jprint = JasperFillManager.fillReport(reporte, parametros, conn); //Impresion del reporte
             JasperViewer view = new JasperViewer(jprint, false); //Vista del reporte
-            //view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-            //view.setLocationRelativeTo(null);
+            view.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+            view.setLocationRelativeTo(null);
             view.setVisible(true);
             view.setTitle(tit); //Titulo del reporte
         }catch(JRException ex){
             JOptionPane.showMessageDialog(null, ex);
         }
-    }*/
+    }
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -235,9 +236,9 @@ public class EstadosFinancieros extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
            //Vatiables
-           /*String path, parametro1, parametro2, titulo = "";
-           //File url = new File("src/BalanceComprobacion.jasper");
-           //path = url.getAbsolutePath();
+           String path, parametro1, parametro2, titulo = "";
+           File url = new File("src/BalanceComprobacion.jasper");
+           path = url.getAbsolutePath();
            if(jComboBox2.getSelectedItem().equals("Balance de comprobacion")){
                path = "src\\recursos\\BalanceComprobacion.jasper"; //Lugar del reporte
                parametro2 = "fechaPeriodo";
@@ -249,13 +250,13 @@ public class EstadosFinancieros extends javax.swing.JDialog {
                parametro2 = "fechas";
                parametro1 = "nombreEstad";
                titulo = jComboBox2.getSelectedItem().toString();
-               //generarReporte(parametro1, parametro2, path, titulo);
+               generarReporte(parametro1, parametro2, path, titulo);
            }else if(jComboBox2.getSelectedItem().equals("Estado de capital")){
                path = "src\\recursos\\BalanceGeneral.jasper"; //Lugar del reporte
                parametro2 = "fechas";
                parametro1 = "nombreEstad";
                titulo = jComboBox2.getSelectedItem().toString();
-               //generarReporte(parametro1, parametro2, path, titulo);
+               generarReporte(parametro1, parametro2, path, titulo);
            }else if(jComboBox2.getSelectedItem().equals("Balance general")){
                path = "src\\recursos\\BalanceGeneral.jasper"; //Lugar del reporte
                parametro2 = "fechas";
@@ -263,7 +264,7 @@ public class EstadosFinancieros extends javax.swing.JDialog {
                titulo = jComboBox2.getSelectedItem().toString();
                generarReporte(parametro1, parametro2, path, titulo);
            }
-           dispose();*/
+           dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

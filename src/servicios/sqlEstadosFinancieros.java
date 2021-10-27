@@ -46,7 +46,7 @@ public class sqlEstadosFinancieros extends Conexion{
         //Variables para la preparacion de conexion con la BD
         PreparedStatement ps = null;
         Connection con = getConexion();
-        String sql = "INSERT INTO estadofinanciero (fecha_inicio, fecha_fin, saldo_estado_financiero, id_tipo_estado_financiero) VALUES (?,?,?,?)";
+        String sql = "INSERT INTO estadofinanciero (fecha_inicio, fecha_fin, saldo_estado_financiero, id_estado_financiero, id_tipo_estado_financiero) VALUES (?,?,?,?,?)";
         //Validacion por errores de conexion
         try{
             //Utilizacion de variables, para obtener datos de la BD
@@ -55,6 +55,7 @@ public class sqlEstadosFinancieros extends Conexion{
             ps.setDate(2, Date.valueOf(estado.getFecha_fin()));
             ps.setDouble(3, estado.getSaldo_estado_financiero());
             ps.setInt(4, estado.getId_tipo_estado_financiero());
+            ps.setInt(5, estado.getId_tipo_estado_financiero());
             ps.execute();
             return true;
         }catch (SQLException ex){

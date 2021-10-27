@@ -240,16 +240,16 @@ public class CrearPeriodo extends javax.swing.JDialog {
                 false,
                 true)));
     try {
-        dateChooserCombo1.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2020, 10, 1),
-            new java.util.GregorianCalendar(2020, 10, 1))));
+        dateChooserCombo1.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2021, 9, 13),
+            new java.util.GregorianCalendar(2021, 9, 13))));
 } catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
     e1.printStackTrace();
     }
     dateChooserCombo1.setEnabled(false);
 
     try {
-        dateChooserCombo2.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2020, 10, 17),
-            new java.util.GregorianCalendar(2020, 10, 17))));
+        dateChooserCombo2.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2021, 10, 11),
+            new java.util.GregorianCalendar(2021, 10, 11))));
 } catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
     e1.printStackTrace();
     }
@@ -424,6 +424,7 @@ public class CrearPeriodo extends javax.swing.JDialog {
                 
             }
         }catch(HeadlessException e){
+            System.out.print("error"+ e.getMessage());
         }
         
         limpiar();

@@ -124,8 +124,8 @@ public class RegistrarTransaccion extends javax.swing.JDialog {
 
         dateChooserCombo1.setCalendarPreferredSize(new java.awt.Dimension(360, 240));
         try {
-            dateChooserCombo1.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2020, 10, 17),
-                new java.util.GregorianCalendar(2020, 10, 17))));
+            dateChooserCombo1.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2021, 10, 1),
+                new java.util.GregorianCalendar(2021, 10, 1))));
     } catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
         e1.printStackTrace();
     }

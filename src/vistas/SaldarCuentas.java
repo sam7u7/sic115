@@ -290,16 +290,16 @@ public class SaldarCuentas extends javax.swing.JDialog {
         dateChooserCombo2.setFormat(2);
         dateChooserCombo2.setWeekStyle(datechooser.view.WeekDaysStyle.SHORT);
         try {
-            dateChooserCombo2.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2020, 10, 17),
-                new java.util.GregorianCalendar(2020, 10, 17))));
+            dateChooserCombo2.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2021, 10, 1),
+                new java.util.GregorianCalendar(2021, 10, 1))));
     } catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
         e1.printStackTrace();
     }
     dateChooserCombo2.setEnabled(false);
 
     try {
-        dateChooserCombo3.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2020, 10, 17),
-            new java.util.GregorianCalendar(2020, 10, 17))));
+        dateChooserCombo3.setDefaultPeriods(new datechooser.model.multiple.PeriodSet(new datechooser.model.multiple.Period(new java.util.GregorianCalendar(2021, 10, 10),
+            new java.util.GregorianCalendar(2021, 10, 10))));
 } catch (datechooser.model.exeptions.IncompatibleDataExeption e1) {
     e1.printStackTrace();
     }

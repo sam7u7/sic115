@@ -102,8 +102,8 @@ public class sqlSaldarCuentas extends Conexion{
     
     public void saldarCuentas(String ini, String fin, List<movimiento> movi, List<Integer> id){
         boolean res = true;
-       // List<String> val = new ArrayList<String>();
-        //List<String> val2 = new ArrayList<String>();
+        List<String> val = new ArrayList<String>();
+        List<String> val2 = new ArrayList<String>();
         
         Connection con = getConexion();
         PreparedStatement ps = null;
@@ -120,8 +120,8 @@ public class sqlSaldarCuentas extends Conexion{
             ps.setDate(2, Date.valueOf(fin));
             rs = ps.executeQuery();
             while(rs.next()){
-                /*val.add(rs.getDate(1).toString());
-                val2.add(rs.getDate(2).toString());*/
+                val.add(rs.getDate(1).toString());
+                val2.add(rs.getDate(2).toString());
                 fechaValini = rs.getDate(1).toString();
                 fechaValfin = rs.getDate(2).toString();
             }
