@@ -279,7 +279,7 @@ public class CrearPeriodo extends javax.swing.JDialog {
     });
 
     jCheckBox1.setFont(new java.awt.Font("Book Antiqua", 1, 14)); // NOI18N
-    jCheckBox1.setText("¿Está activo?");
+    jCheckBox1.setLabel("Activo");
 
     javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
     jPanel1.setLayout(jPanel1Layout);
@@ -302,23 +302,19 @@ public class CrearPeriodo extends javax.swing.JDialog {
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)))
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(jCheckBox1, javax.swing.GroupLayout.Alignment.TRAILING)
-                .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addComponent(jButton1)
+                .addComponent(jCheckBox1))
             .addGap(29, 29, 29))
     );
     jPanel1Layout.setVerticalGroup(
         jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(14, 14, 14)
-                    .addComponent(jCheckBox1))
-                .addGroup(jPanel1Layout.createSequentialGroup()
-                    .addGap(22, 22, 22)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+            .addGap(19, 19, 19)
+            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(jLabel3)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jCheckBox1))
+            .addGap(18, 18, Short.MAX_VALUE)
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -339,13 +335,23 @@ public class CrearPeriodo extends javax.swing.JDialog {
     jTable1.setBorder(new javax.swing.border.MatteBorder(null));
     jTable1.setModel(new javax.swing.table.DefaultTableModel(
         new Object [][] {
-            {null, null, null, null},
-            {null, null, null, null},
-            {null, null, null, null},
-            {null, null, null, null}
+            {null, null, null},
+            {null, null, null},
+            {null, null, null},
+            {null, null, null},
+            {null, null, null},
+            {null, null, null},
+            {null, null, null},
+            {null, null, null},
+            {null, null, null},
+            {null, null, null},
+            {null, null, null},
+            {null, null, null},
+            {null, null, null},
+            {null, null, null}
         },
         new String [] {
-            "Title 1", "Title 2", "Title 3", "Title 4"
+            "Fecha inicio", "Fecha fin", "Activo"
         }
     ));
     jTable1.setRowSelectionAllowed(false);
